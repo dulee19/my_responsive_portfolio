@@ -1,3 +1,26 @@
+.menu-btn {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  z-index: 3;
+  cursor: pointer;
+  transition: all 0.3s ease; }
+  .menu-btn .btn-line {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin-bottom: 0.4rem;
+    display: block;
+    transition: all 0.3s ease; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px); }
+
 * {
   margin: 0;
   padding: 0;
