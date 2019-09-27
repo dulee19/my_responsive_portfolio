@@ -1,6 +1,6 @@
 @import "config";
 @import "menu";
-@import "mobile";
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +13,7 @@ body {
   background: $primary-color;
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1.4;
-  color: #fff;
+  color: set-text-color($primary-color);
 }
 
 h1,
@@ -50,7 +50,7 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%;
+  min-height: calc(100vh - 60px);
 
   .icons {
     margin-top: 1.5rem;
@@ -72,3 +72,53 @@ main {
     }
   }
 }
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "bioimage bio bio"
+    "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+
+  .bio-image-2 {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    border: 3px solid $secondary-color;
+  }
+
+  .bio {
+    grid-area: bio;
+  }
+
+  .job-1 {
+    grid-area: job1;
+  }
+  .job-2 {
+    grid-area: job2;
+  }
+  .job-3 {
+    grid-area: job3;
+  }
+
+  .job {
+    background: lighten($primary-color, 3);
+    padding: 0.5rem;
+    border-bottom: 5px solid $primary-color;
+    line-height: 1.7;
+  }
+}
+
+// Footer
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+
+@import "mobile";
