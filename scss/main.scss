@@ -121,4 +121,46 @@ main {
   height: 60px;
 }
 
+// Work page
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+
+  img {
+    width: 100%;
+    border: 2px solid orange;
+    @include easeOut;
+
+    &:hover {
+      opacity: 0.6;
+      border: $secondary-color;
+    }
+  }
+}
+
+// Button styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  outline: none;
+  margin-bottom: 0.3rem;
+  @include easeOut;
+
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: rgb(236, 108, 61);
+}
+.btn-light {
+  @extend .btn;
+  background: deepskyblue;
+}
+
 @import "mobile";
